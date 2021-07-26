@@ -78,6 +78,12 @@ def test_series_other():
     assert expected == actual
 
 
+def test_series_other():
+    expected = [1, 1, 2]
+    actual = sum_series(4, 1)
+    assert expected == actual
+
+
 """output fibonaci
 0 ---0
 1 --1
