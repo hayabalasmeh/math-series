@@ -1,7 +1,7 @@
 
 from math_series import __version__
 from math_series.series import fibonacci
-from math_series.series import lucas, sum_series
+from math_series.series import lucas, sum_series, sum_series_list
 
 
 def test_version():
@@ -60,27 +60,51 @@ def test_three():
     assert expected == actual
 
 
-def test_series_fibonaci():
-    expected = [0, 1, 1]
-    actual = sum_series(3)
+def test_series_other_1():
+    expected = 9
+    actual = sum_series(2, 4, 5)
     assert expected == actual
 
 
-def test_series_lucas():
-    expected = [2, 1, 3, 4]
+def test_series_other_2():
+    expected = 7
     actual = sum_series(4, 2, 1)
     assert expected == actual
 
 
-def test_series_other():
-    expected = [2, 3]
-    actual = sum_series(5, 3)
+def test_series_other_3():
+    expected = 7
+    actual = sum_series(3, 3, 2)
     assert expected == actual
 
 
-def test_series_other():
-    expected = [1, 1, 2]
-    actual = sum_series(4, 1)
+def test_series_other_4():
+    expected = 2
+    actual = sum_series(3)
+    assert expected == actual
+
+
+def test_series_list_1():
+    expected = [3, 2, 5]
+    actual = sum_series_list(3, 3, 2)
+    assert expected == actual
+
+
+def test_series_list_2():
+    expected = [2, 1, 3, 4]
+    actual = sum_series_list(4, 2, 1)
+    assert expected == actual
+
+
+def test_series_list_3():
+    expected = [4, 0, 4, 4, 8, 12, 20]
+    actual = sum_series_list(7, 4, 0)
+    assert expected == actual
+
+
+def test_series_list_4():
+    expected = [2, -1, 1, 0]
+    actual = sum_series_list(4, 2, -1)
     assert expected == actual
 
 
@@ -98,9 +122,9 @@ def test_series_other():
 1--1
 2--3
 3--4
-"""
+4---7"""
 """
 output sum_series
-[first =0, second=1] and n=2 --- [0,1,1]
-[first =2, second =1] and n=2 --- [2,1,3]
+[first = 0, second = 1] and n = 2 - -- [0, 1, 1]
+[first= 2, second = 1] and n = 2 - -- [2, 1, 3]
 """
